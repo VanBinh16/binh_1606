@@ -50,10 +50,10 @@ const Team = () => {
                 <p className="description">{item.position}</p>
                 <div className="team__member-social">
                   <span>
-                    <i class="ri-linkedin-line"></i>
+                    <i className="ri-linkedin-line"></i>
                   </span>
                   <span>
-                    <i class="ri-facebook-circle-line"></i>
+                    <i className="ri-facebook-circle-line"></i>
                   </span>
                 </div>
               </div>
