@@ -80,12 +80,12 @@ h1,h2 {
 }
 
 section {
-  padding: 60px, 0px;
+  margin-top: 20px;
 }
 
 .container {
     width: 1140px;
-    padding: 15px 15px;
+    padding: 0px 15px;
     margin: auto;
 }
 
