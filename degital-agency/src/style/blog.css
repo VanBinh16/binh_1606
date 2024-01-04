@@ -90,6 +90,11 @@
     width: 100%;
   }
 
+  .blog__item:nth-child(2) .blog__img {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
   .blog__item:nth-child(2) {
     margin-bottom: 20px;
   }
