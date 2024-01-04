@@ -25,24 +25,39 @@ const nav_links = [
   },
 ];
 const Header = ({ theme, toggleTheme }) => {
-  const navRef = useRef(null);
+  const headerRef = useRef(null);
+
+  const menuRef = useRef(null);
   const headerFunc = () => {
     if (
       document.body.scrollTop > 80 ||
       document.documentElement.scrollTop > 80
     ) {
-      navRef.current.classList.add("header__shrink");
+      headerRef.current.classList.add("header__shrink");
     } else {
-      navRef.current.classList.remove("header__shrink");
+      headerRef.current.classList.remove("header__shrink");
     }
   };
 
   useEffect(() => {
     window.addEventListener("scroll", headerFunc);
     return () => window.removeEventListener("scroll", headerFunc);
-  });
+  }, []);
+
+  const toggleMenu = () => menuRef.current.classList.toggle("menu__active");
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    const targetAttr = e.target.getAttribute("href");
+    const location = document.querySelector(targetAttr).offsetTop;
+    window.scrollTo({
+      left: 0,
+      top: location - 80,
+    });
+  };
+
   return (
-    <header className="header" ref={navRef}>
+    <header className="header" ref={headerRef}>
       <div className="container">
         <div className="nav__wrapper">
           <div className="logo">
@@ -50,11 +65,15 @@ const Header = ({ theme, toggleTheme }) => {
           </div>
 
           {/* =============navigation========== */}
-          <div className="navigation">
+          <div className="navigation" ref={menuRef} onClick={toggleMenu}>
             <ul className="menu">
               {nav_links.map((item, index) => (
                 <li className="menu__item" key={index}>
-                  <a href={item.path} className="menu__link">
+                  <a
+                    href={item.path}
+                    onClick={handleClick}
+                    className="menu__link"
+                  >
                     {item.display}
                   </a>
                 </li>
@@ -76,6 +95,10 @@ const Header = ({ theme, toggleTheme }) => {
               )}
             </span>
           </div>
+
+          <span className="mobile__menu" onClick={toggleMenu}>
+            <i className="ri-menu-line"></i>
+          </span>
         </div>
       </div>
     </header>
