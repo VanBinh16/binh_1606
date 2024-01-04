@@ -57,7 +57,7 @@
   --team-card-bg: #fff;
 }
 
-* {
+*{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -79,8 +79,8 @@ h1,h2 {
     font-size: 2rem;
 }
 
-section {
-  margin-top: 20px;
+section{
+  padding: 60px 0;
 }
 
 .container {
