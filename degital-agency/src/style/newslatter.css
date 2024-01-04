@@ -43,3 +43,27 @@
   background: var(--primary-color);
   color: #fff;
 }
+
+@media only screen and (max-width: 992px) {
+  .newslatter__content h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .newslatter__wrapper {
+    flex-wrap: wrap;
+  }
+
+  .newslatter__content,
+  .newslatter__form {
+    width: 100%;
+  }
+  .newslatter__content {
+    margin-bottom: 30px;
+  }
+  .newslatter__form input {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+}

@@ -80,7 +80,7 @@ h1,h2 {
 }
 
 section{
-  padding: 60px 0;
+  padding: 60px 0px;
 }
 
 .container {
@@ -118,4 +118,16 @@ section{
 
 .light-theme .team__img {
   background: #ddd;
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    width: 100%;
+  } 
+}
+
+@media only screen and (max-width: 768px) {
+  section {
+    padding: 40px 0;
+  } 
 }
